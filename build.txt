@@ -1,0 +1,4 @@
+displayName = Gaomon Companion Mod [1.4]
+author = Nakano15
+version = 0.1
+modReferences = terraguardians
