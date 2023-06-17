@@ -1,1 +1,20 @@
-Gaomon Companion Mod [1.4] is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+This mod requires TerraGuardians Mod installed to work.
+
+This is Gaomon Companion Mod. This mod has been made to showcase how you can 
+make a custom companion for TerraGuardians Mod, and make it show up in-game.
+
+It might actually be outdated or with missing hooks you can use for companion base 
+infos, so I recommend checking the TerraGuardians Mod companion scripts if you want 
+to further expand your companions.
+
+You can find the Github page of this mod here:
+https://github.com/nakano15/gaomonfollowermod1dot4
+
+And this mod thread can be found here:
+https://forums.terraria.org/index.php?threads/1-3-terraguardians-gaomon-companion.95367/
+
+TerraGuardians Mod can be found on the Steam Workshop too.
+If you want the mod original thread, check out this link:
+https://forums.terraria.org/index.php?threads/1-4-test-terraguardians-terrarian-companions.81757
+
+Enjoy :)
