@@ -8,7 +8,7 @@ namespace gaomonmod1dot4.Items
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Seems to invoke something.");
+            // Tooltip.SetDefault("Seems to invoke something.");
         }
 
         private bool UseItem(Player player)
