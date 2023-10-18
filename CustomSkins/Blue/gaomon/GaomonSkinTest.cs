@@ -20,8 +20,18 @@ namespace gaomonmod1dot4.CustomSkins.Blue
             AddTexture("right_arm", "gaomonmod1dot4/CustomSkins/Blue/gaomon/right_arm_g");
         }
 
-        public override void CompanionDrawLayerSetup(Companion c, bool IsDrawingFrontLayer, PlayerDrawSet drawSet, ref TgDrawInfoHolder Holder, ref List<DrawData> DrawDatas)
+        //Replaces the body part textures with the Skin texture.
+        //This is handy because will let people making Outfits know which body part is which, when looking for the textures.
+        public override void PreDrawCompanions(Companion c, ref PlayerDrawSet drawSet, ref TgDrawInfoHolder Holder)
         {
+            Holder.BodyTexture = GetTexture("body");
+            Holder.ArmTexture[0] = GetTexture("left_arm");
+            Holder.ArmTexture[1] = GetTexture("right_arm");
+        }
+
+        /*public override void CompanionDrawLayerSetup(Companion c, bool IsDrawingFrontLayer, PlayerDrawSet drawSet, ref TgDrawInfoHolder Holder, ref List<DrawData> DrawDatas)
+        {
+            //Old method. Basically, find the body texture and replace it, but the new method is aimed towards avoiding conflict with outfits.
             CompanionSpritesContainer spr = c.Base.GetSpriteContainer;
             for(int i = 0; i < DrawDatas.Count; i++)
             {
@@ -50,6 +60,6 @@ namespace gaomonmod1dot4.CustomSkins.Blue
         {
             DrawData ndd = new DrawData(NewTexture, dd.position, dd.sourceRect, dd.color, dd.rotation, dd.origin, dd.scale.Y, dd.effect, 0);
             dd = ndd;
-        }
+        }*/
     }
 }

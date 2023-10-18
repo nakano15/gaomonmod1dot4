@@ -10,7 +10,7 @@ namespace gaomonmod1dot4.CustomSkins
     //The same can also be done with outfits by using AddOutfit instead.
     public class BlueCustomSkins : CompanionSkinContainer
     {
-        public override void OnLoad()
+        protected override void OnLoad()
         {
             AddSkin(0, new GaomonSkinTest());
         }
