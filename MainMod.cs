@@ -20,6 +20,7 @@ namespace gaomonmod1dot4
 		public override void PostSetupContent()
 		{
 			terraguardians.MainMod.AddCompanionDB(new DigimonContainer(), this); //Adding the companion container I made to the companion database. That will control the companions list of the mod. Check DigimonContainer.cs.
+			terraguardians.MainMod.AddCompanionHookContainer(new CustomModHooks(), this); //Adds custom mod hooks to TerraGuardians Mod. The Custom Mod Hook only adds a new skin to Blue.
 		}
 	}
 }
