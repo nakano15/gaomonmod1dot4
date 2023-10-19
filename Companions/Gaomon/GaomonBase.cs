@@ -33,11 +33,10 @@ namespace gaomonmod1dot4.Companions
         protected override CompanionDialogueContainer GetDialogueContainer => new Gaomon.GaomonDialogues(); //I have split the companion dialogues to another file. Here, you initialize the object containing companion dialogues.
         protected override SubAttackBase[] GetDefaultSubAttacks()
         {
-            SubAttackBase[] SubAttacks = new SubAttackBase[]
+            return new SubAttackBase[]
             {
                 new Gaomon.SubAttack.GaoRushAttack()
             };
-            return SubAttacks;
         }
 
         public override void UpdateAttributes(Companion companion) //This updates whenever the companion status are reset. If you want to change their status, or give them other benefits, here is the place.
