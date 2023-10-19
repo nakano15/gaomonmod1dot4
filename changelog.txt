@@ -1,0 +1,2 @@
+Added a example skin for Blue, which is only one frame, and makes her look like Gaomon.
+Added an example Sub Attack to Gaomon.
