@@ -1,0 +1,64 @@
+Items: {
+	BlueDigivice: {
+		// DisplayName: Blue Digivice
+		// Tooltip: ""
+	}
+}
+
+// Projectiles.GaoPunch.DisplayName: Gao Punch
+
+Companions: {
+	Gaomon: {
+		// Names generally don't need translation, unless your language uses symbols.
+		// name: Gaomon
+		description: Veio de outro mundo por jeitos desconhecidos.
+		greet1: Woah! Você é meu novo mestre?
+		normal1: Por quê eu tenho que usar armas? Eu posso usar meus punhos!
+		normal2: Eu meio que sinto como se estivesse em um universo completamente diferente.
+		normal3: Eu não acho que estou pronto para uma digivolução, mas eu vou continuar dando o meu melhor de qualquer jeito.
+		normal4: Então, você luta também? Legal, eu gostaria de lutar ao seu lado.
+		normal5: No mundo que eu venho, nos lutamos enquanto nossos mestres nos dão ordens. É meio legal que aqui estou lutando junto ao meu mestre.
+		normal6: Se você se machucar, recue por um momento enquanto você se recupera. Eu consido lidar com os monstros.
+		normal7: Veja todos esses sacos de pancadas!
+		normal8: Mal posso esperar para socar algo.
+		normal9: Eu acho que mesmo que eu peça para você ficar atrás de mim, você não vai. Certo?
+		
+        normal10: Eu não acho que tem zumbís no mundo que eu vim from. Não estou falando de Digimons zumbís, digo.
+		normal11: Você acha que a gente poderia ir lá fora, para conseguir alguma exp extra?
+		normal12: Aack! O que são essas coisas?!
+		normal13: Eles vão sentir o poder do meu gancho de direita!
+		normal14: Hey, Chefe!
+		normal15: É estranho ser o único Digimon neste mundo.
+		normal16: Isto... Isto não é legal... Eu prefiro lugares secos.
+		normal17: Minhas luvas estão ensopadas.
+		normal18: O som da chuva é legal. Mas só o som.
+		normal19: Aquela criatura gigante de carne que nós enfrentamos era tão assustador! Nós não vamos enfrenta-la de novo, certo?
+		normal20: Eu estive falando com o [nn:22], e ele disse que o motivo de eu estar aqui, é por intervenção de terceira parte. O quê isso significa?
+		normal21: Absurdo que o [nn:17] não tem discos a venda. Mas parece que poções funcionam.
+		normal22: Você esteve falando com a [nn:18]? Ela provavelmente reclamou que eu fico a visitando frequentemente, certo?
+		normal23: O quê são essas criaturas? Elas se parecem com você, mas maiores, com pelos, focinho, orelhas, cauda, e mais selvagem.
+		normal24: Eu estava com um pouco de medo dessas criaturas, até que uma delas falou comigo. Eles são relamente pessoas legais.
+		normal25: Como eu consigo falar com os TerraGuardiões? Eu não sei. Eu só consigo os escutar na minha cabeça.
+		normal26: "[gn:0] me perguntou mais cedo se sou que nem ele. Não parece que ele gostou de saber que não sou."
+		normal27: Quêeeeeeeeeeeeee? [gn:1] tem um namorado? E o namorado dela é um zumbí?! Quêeeeeeeee?
+		normal28: Diga... Você acha que eu tenho alguma chance com a [gn:1]?
+		normal29: É tão bom ver alguém do meu tamanho neste mundo.
+		normal30: Uh... Eu acho que está ok, ter o [gn:3] por perto. Certo? Certo??
+		normal31: Você não precisa de um guarda-costas, você tem a mim.
+		talk1: Este lugar é meio que legal! Aventura em todo lugar!
+		talk2: Você acha que podemos ir para o meu mundo?
+		talk3: Eu te acho o melhor domador de todos.
+		talk4: Eu meio que acho o chamado "[evil]" assustador.
+		talk5: Por quê a [gn:1] me rejeita? É porque eu sou pequeno?
+		norequest1: Eu não tenho nada no momento.
+		norequest2: A única coisa que preciso, é de praticar meus socos.
+		hasrequest1: É meio estranho para eu perguntar, mas eu preciso de sua ajuda para algo. Eu preciso que você [objective], você pode fazer isso?
+		hasrequest2: Hey chefe! Você pode me ajudar com uma coisa? Eu preciso que você [objective]. Eu não costumo pedir ajuda mas... Você pode me ajudar com isto?
+		completedrequest1: Você é o melhor, Chefe!
+		completedrequest2: Impressionante! Você realmente fez isso!
+		//personal chat
+		pcoption1: Como você se sente hoje?
+		pcanswer1: Eu? Eu me sinto bem.
+		pcanswer2: E quanto a você, [nickname]?
+	}
+}

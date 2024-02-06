@@ -7,104 +7,111 @@ namespace gaomonmod1dot4.Companions.Gaomon
     //Contains the dialogues of the companion. Must extend CompanionDialogueContainer.
     public class GaomonDialogues : CompanionDialogueContainer //Must be assigned on the companion base file, setting it as the value of "GetDialogueContainer" overrideable method.
     {
+        //This flag makes certain dialogues only trigger the translation version of the code, when necessary.
+        //This was added to keep part of the original code in.
+        const bool UseTranslation = true;
         public override string GreetMessages(Companion companion) //Messages for when you just met the companion.
         {
-            return "Woah! Are you my new master?";
+            // You can return text with translation support or not.
+            // Should you decide to add translation support, check "Localization/en-US_Mods.gaomonmod1dot4.hjson" for how to add the keys.
+            // Do notice that the name of the companion on the translation file, is the same as the "Name" field of the companion.
+            if (UseTranslation)
+                //If you want to add custom translation support, use the method bellow to get this companion translation.
+                return GetTranslation("greet1");
+            else
+                // You can still return untranslated text too.
+                return "Woah! Are you my new master?";
         }
 
         public override string NormalMessages(Companion companion) //Normal chitchat. If you want to get player reference, use MainMod.GetLocalPlayer.
         {
             List<string> Mes = new List<string>();
-            Mes.Add("Why I have to use weapons? I can use my fists!");
-            Mes.Add("It kind of feels like I'm in a completelly different universe.");
-            Mes.Add("I don't think I'm ready for digivolution, but I will keep doing my best either way.");
-            Mes.Add("So, you will fight too? Good, I would love fighting alongside you.");
-            Mes.Add("In the world I came from, we fight while our masters gives us orders. It is quite nice that he I'm fighting alongside my master.");
-            Mes.Add("If you get hurt, pull back for a while until you recover. I can handle them.");
+            //Gets translated text from localization file, from "normal" entries from 1 to 6, and places the result on "Mes" string array.
+            GetTranslationRange("normal", 1, 6, Mes);
             if (!Main.dayTime)
             {
                 if (Main.bloodMoon)
                 {
-                    Mes.Add("Look at all those punching bags!");
-                    Mes.Add("I can't wait to punch something.");
-                    Mes.Add("I think that even If I tell you to stay behind me, you wont. Right?");
+                    //You can also return the translation texts one by one too, but TranslationRange was made to avoid this kind of case.
+                    Mes.Add(GetTranslation("normal7"));
+                    Mes.Add(GetTranslation("normal8"));
+                    Mes.Add(GetTranslation("normal9"));
                 }
                 else
                 {
-                    Mes.Add("I don't think there are zombies in the world I came from. Not talking about zombie digimons, I mean.");
-                    Mes.Add("Do you think we could go outside, to get some extra exp?");
+                    GetTranslationRange("normal", 10, 11, Mes);
                 }
             }
             else
             {
                 if (Main.eclipse)
                 {
-                    Mes.Add("Aack! What are those things?!");
-                    Mes.Add("They will feel the power of my upper cut!");
+                    GetTranslationRange("normal", 12, 13, Mes);
                 }
                 else
                 {
-                    Mes.Add("Hey, boss!");
-                    Mes.Add("It's weird being the only digimon in this world.");
+                    GetTranslationRange("normal", 14, 15, Mes);
                 }
             }
             if (Main.raining && !Main.eclipse && !Main.bloodMoon)
             {
-                Mes.Add("This... This isn't great... I preffer dry places.");
-                Mes.Add("I think my gloves are filled with water.");
-                Mes.Add("The rain sound is great. But only the sound.");
+                GetTranslationRange("normal", 16, 18, Mes);
             }
             if (Main.hardMode)
             {
-                Mes.Add("That giant flesh creature we fought was so scary! We aren't going to face It again, right?");
+                Mes.Add(GetTranslation("normal19"));
             }
-            if (NPC.AnyNPCs(Terraria.ID.NPCID.Guide)) //[nn:number] gets the name of the npc of the id you set at the number.
+            if (NPC.AnyNPCs(Terraria.ID.NPCID.Guide)) //[nn:number] gets the name of the npc of the id you set at the number. ID 22 is the Guide.
             {
-                Mes.Add("I have been talking with [nn:" + Terraria.ID.NPCID.Guide + "], and he said that the reason I'm here, is because of third party intervention. What does that mean?");
+                if (!UseTranslation)
+                    Mes.Add("I have been talking with [nn:22], and he said that the reason I'm here, is because of third party intervention. What does that mean?");
+                else
+                    Mes.Add(GetTranslation("normal20"));
             }
             if (NPC.AnyNPCs(Terraria.ID.NPCID.Merchant))
             {
-                Mes.Add("Absurd that [nn:" + Terraria.ID.NPCID.Merchant + "] doesn't have any disks to sell. But It seems like potions works too.");
+                Mes.Add(GetTranslation("normal21"));
             }
             if (NPC.AnyNPCs(Terraria.ID.NPCID.Nurse))
             {
-                Mes.Add("You have been talking with [nn:" + Terraria.ID.NPCID.Nurse+ "]? She probably complained that I visit her too frequently, right?");
+                Mes.Add(GetTranslation("normal22"));
             }
 
             if (WorldMod.GetTerraGuardiansCount > 0)
             {
-                Mes.Add("What are those creatures? They look like you, but taller, with fur, snout, ears, tail, and more wild.");
-                Mes.Add("I was a bit scared of those creatures, until one of them talked to me. They are really nice guys.");
-                Mes.Add("How I can speak with the TerraGuardians? I don't know. I just can hear them on my head.");
+                GetTranslationRange("normal", 23, 25, Mes);
             }
 
             if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Rococo)) //Checks if there's a npc of this companion ID spawned in the world. Add ModName as an argument after the ID to get another mod companion instead.
             {
-                //[gn:id:modid] gets the name of the companion whose ID and ModID are supplied. Leaving without mod id will make the mod automatically get a TerraGuardian mod companion.
-                Mes.Add("[gn:" + 0 + "] asked me earlier If I'm like him. It didn't looked like he liked to know that I'm not.");
+                if (!UseTranslation)
+                    //[gn:id:modid] gets the name of the companion whose ID and ModID are supplied. Leaving without mod id will make the mod automatically get a TerraGuardian mod companion.
+                    Mes.Add("[gn:0] asked me earlier If I'm like him. It didn't looked like he liked to know that I'm not.");
+                else
+                    Mes.Add(GetTranslation("normal26"));
             }
             if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Blue))
             {
                 if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Zacks))
                 {
-                    Mes.Add("Whaaaaaaaat? [gn:" + terraguardians.CompanionDB.Blue + "] has a boyfriend? And her boyfriend is a zombie?! Whaaaaaaaaaaaat?");
+                    Mes.Add(GetTranslation("normal27"));
                 }
                 else
                 {
-                    Mes.Add("Say... Do you think I would have a chance with [gn:" + terraguardians.CompanionDB.Blue + "]?");
+                    Mes.Add(GetTranslation("normal28"));
                 }
             }
             if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Sardine) || WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Bree))
             {
-                Mes.Add("It's good to see someone of my size in this world.");
+                Mes.Add(GetTranslation("normal29"));
             }
             if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Zacks))
             {
-                Mes.Add("Uh... I guess It's all fine, having [gn:" + terraguardians.CompanionDB.Zacks + "] around. Right? Right??");
+                Mes.Add(GetTranslation("normal30"));
             }
             if (WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Brutus))
             {
-                Mes.Add("You don't need a bodyguard, you has me.");
+                Mes.Add(GetTranslation("normal31"));
             }
             return Mes[Terraria.Main.rand.Next(Mes.Count)];
         }
@@ -112,13 +119,17 @@ namespace gaomonmod1dot4.Companions.Gaomon
         public override string TalkMessages(Companion companion) //This message only appears if you speak with a companion whose friendship exp increases.
         {
             List<string> Mes = new List<string>();
-            Mes.Add("This place is kind of great! Adventure everywhere!");
-            Mes.Add("Do you think we could go to my world?");
-            Mes.Add("I think you're the best tamer ever.");
-            Mes.Add("I kind of find the " + (WorldGen.crimson ? "Crimson" : "Corruption") + " creepy.");
+            GetTranslationRange("talk", 1, 3, Mes);
+            //You can still be creative on how to make some dialogues work.
+            //Here I created the [evil] tag, to replace for current world ailment.
+            Mes.Add(GetTranslation("talk4").Replace("[evil]", WorldGen.crimson ? "Crimson" : "Corruption") + " creepy.");
             if (companion.Male && WorldMod.HasCompanionNPCSpawned(terraguardians.CompanionDB.Blue))
             {
-                Mes.Add("Why does [gn:" + terraguardians.CompanionDB.Blue + "] rejects me? Is It because I'm small?");
+                //You actually will need the help of CompanionDB to figure out who "gn:1" is. In this case, Gaomon is talking about Blue.
+                if (!UseTranslation)
+                    Mes.Add("Why does [gn:1] rejects me? Is It because I'm small?");
+                else
+                    Mes.Add(GetTranslation("talk5"));
             }
             return Mes[Terraria.Main.rand.Next(Mes.Count)];
         }
@@ -129,24 +140,16 @@ namespace gaomonmod1dot4.Companions.Gaomon
             {
                 case RequestContext.NoRequest:
                     {
-                        List<string> Mes = new List<string>();
-                        Mes.Add("I don't need anything right now.");
-                        Mes.Add("The only thing I need, is to practice my punches.");
-                        return Mes[Terraria.Main.rand.Next(Mes.Count)];
+                        //Gets one random "norequest" translation, from indexes 1 and 2.
+                        return GetTranslationRandom("norequest", 1, 2);
                     }
                 case RequestContext.HasRequest:
                     {
-                        List<string> Mes = new List<string>();
-                        Mes.Add("It is really weird for me to ask, but I need your help for something. I need you to [objective], can you do it?");
-                        Mes.Add("Hey boss! Can you help me with something? I need you to [objective]. I'm not really used to ask for help but.. Can you help me with this?");
-                        return Mes[Main.rand.Next(Mes.Count)];
+                        return GetTranslationRandom("hasrequest", 1, 2);
                     }
                 case RequestContext.Completed:
                     {
-                        List<string> Mes = new List<string>();
-                        Mes.Add("You're the best, boss!");
-                        Mes.Add("Amazing! You really did It!");
-                        return Mes[Terraria.Main.rand.Next(Mes.Count)];
+                        return GetTranslationRandom("completedrequest", 1, 2);
                     }
                 case RequestContext.Accepted:
                     return "You'll do? Thanks! Come tell me when you finish my request.";
@@ -325,12 +328,17 @@ namespace gaomonmod1dot4.Companions.Gaomon
 
         public override void ManageOtherTopicsDialogue(Companion companion, MessageDialogue dialogue) //Allow you to add new dialogues to the other topics dialogue. There's one for lobby dialogues too.
         {
-            dialogue.AddOptionAtTop("How are you feeling today?", PersonalChat); //Adds option at the top of the dialogue.
+            //Companion object also has a "GetTranslation" method. Use that to get companion specific translation with ease.
+            dialogue.AddOptionAtTop(companion.GetTranslation("pcoption1"), PersonalChat); //Adds option at the top of the dialogue.
         }
 
         private void PersonalChat()
         {
-            MultiStepDialogue m = new MultiStepDialogue(new string[]{"Me? I'm feeling fine.", "What about you, [nickname]?"}); //For dialogues with multiple steps before offering a choice.
+            MultiStepDialogue m = new MultiStepDialogue( new string[]{ 
+                //With the absence of Companion object on the dialogue, use "Dialogue.Speaker" to get the speaker of the dialogue, and call translation.
+                Dialogue.Speaker.GetTranslation("pcanswer1"), 
+                Dialogue.Speaker.GetTranslation("pcanswer2")
+            }); //For dialogues with multiple steps before offering a choice.
             m.AddOption("I'm feeling fine.", OnAnswerFeelingFine); //One of the dialogue options. The options must be linked to a void method without arguments.
             m.AddOption("I'm not feeling really well.", OnAnswerNotFeelingFine);
             m.RunDialogue(); //Always use RunDialogue() method after setting up the dialogue, or else the dialogue will not appear, and you will have wasted your time.

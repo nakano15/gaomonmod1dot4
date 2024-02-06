@@ -6,3 +6,58 @@ Items: {
 }
 
 Projectiles.GaoPunch.DisplayName: Gao Punch
+
+Companions: {
+	Gaomon: {
+		// Names generally don't need translation, unless your language uses symbols.
+		name: Gaomon
+		description: Came from another world by unknown ways.
+		greet1: Woah! Are you my new master?
+		normal1: Why I have to use weapons? I can use my fists!
+		normal2: It kind of feels like I'm in a completelly different universe.
+		normal3: I don't think I'm ready for digivolution, but I will keep doing my best either way.
+		normal4: So, you will fight too? Good, I would love fighting alongside you.
+		normal5: In the world I came from, we fight while our masters gives us orders. It is quite nice that here I'm fighting alongside my master.
+		normal6: If you get hurt, pull back for a while until you recover. I can handle the monsters.
+		normal7: Look at all those punching bags!
+		normal8: I can't wait to punch something.
+		normal9: I think that even If I tell you to stay behind me, you wont. Right?
+		normal10: I don't think there are zombies in the world I came from. Not talking about zombie Digimons, I mean.
+		normal11: Do you think we could go outside, to get some extra exp?
+		normal12: Aack! What are those things?!
+		normal13: They will feel the power of my upper cut!
+		normal14: Hey, Boss!
+		normal15: It's weird being the only Digimon in this world.
+		normal16: This... This isn't great... I preffer dry places.
+		normal17: My gloves are soaked.
+		normal18: The rain sound is great. But only the sound.
+		normal19: That giant flesh creature we fought was so scary! We aren't going to face It again, right?
+		normal20: I have been talking with [nn:22], and he said that the reason I'm here, is because of third party intervention. What does that mean?
+		normal21: Absurd that [nn:17] doesn't have any disks to sell. But It seems like potions works too.
+		normal22: You have been talking with [nn:18]? She probably complained that I visit her too frequently, right?
+		normal23: What are those creatures? They look like you, but taller, with fur, snout, ears, tail, and more wild.
+		normal24: I was a bit scared of those creatures, until one of them talked to me. They are really nice guys.
+		normal25: How I can speak with the TerraGuardians? I don't know. I just can hear them on my head.
+		normal26: "[gn:0] asked me earlier If I'm like him. It didn't looked like he liked to know that I'm not."
+		normal27: Whaaaaaaaat? [gn:1] has a boyfriend? And her boyfriend is a zombie?! Whaaaaaaaaaaaat?
+		normal28: Say... Do you think I would have a chance with [gn:1]?
+		normal29: It's good to see someone of my size in this world.
+		normal30: Uh... I guess It's all fine, having [gn:3] around. Right? Right??
+		normal31: You don't need a bodyguard, you has me.
+		talk1: This place is kind of great! Adventure everywhere!
+		talk2: Do you think we could go to my world?
+		talk3: I think you're the best tamer ever.
+		talk4: I kind of find the [evil] creepy.
+		talk5: Why does [gn:1] rejects me? Is It because I'm small?
+		norequest1: I don't need anything right now.
+		norequest2: The only thing I need, is to practice my punches.
+		hasrequest1: It is really weird for me to ask, but I need your help for something. I need you to [objective], can you do it?
+		hasrequest2: Hey boss! Can you help me with something? I need you to [objective]. I'm not really used to ask for help but.. Can you help me with this?
+		completedrequest1: You're the best, Boss!
+		completedrequest2: Amazing! You really did It!
+		//personal chat
+		pcoption1: How are you feeling today?
+		pcanswer1: Me? I'm feeling fine.
+		pcanswer2: What about you, [nickname]?
+	}
+}

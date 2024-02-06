@@ -10,7 +10,11 @@ namespace gaomonmod1dot4.Companions
     public class GaomonBase : TerraGuardianBase
     {
         public override string Name => "Gaomon";
-        public override string Description => "Came from another world by unknown ways.";
+        //NEVER use Name variable to return translated name of the companion.
+        //Use DisplayName instead, since it will not end up breaking your game depending on region.
+        //Check GaomonDialogues.cs for how to make use of translation.
+        public override string DisplayName => GetTranslation("name");
+        public override string Description => GetTranslation("description");
         public override int SpriteWidth => 64; //The dimensions of each sprite.
         public override int SpriteHeight => 64;
         public override int FramesInRow => 20; //How many frames there are in a row. Please make the spritesheet normal orientation horizontal.
